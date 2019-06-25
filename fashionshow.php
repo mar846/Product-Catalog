@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Fashion Show</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -32,9 +32,9 @@
     .sidebar-nav {
     position: absolute;
     top: 0;
-    left: -70rem;
+    left: -621px;
     width: 100%;
-    height: 109rem;
+    height: 1103px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -162,43 +162,15 @@
     <div class="text-center my-3">
       <img src="images/logo.png" style="height:3rem;" alt="">
     </div>
-    <h4 class="pl-2">NEW COLLECTION</h4>
-    <div class="scrollmenu mt-3">
-      <?php
-      for ($i=1; $i < 10; $i++) {
+    <?php
+      for ($i=1; $i < 5; $i++) {
         ?>
-        <a href="detail.php?<?php echo $i; ?>">
-          <div class="card" style="width: 50%;">
-            <img src="images/crm_<?php echo $i;?>.jpg" class="card-img-top" style="width: 100%;">
-          </div>
-        </a>
+        <div class="card">
+          <img src="images/fashionshow/crm_<?php echo $i;?>.jpg" alt="" style="width:100%;">
+        </div>
         <?php
       }
-       ?>
-    </div>
-    <?php
-    for ($i=0; $i < 3; $i++) {
-      ?>
-      <div class="card my-2">
-        <?php $img = rand(1,43); ?>
-        <img src="images/crm_<?php echo $img;?>.jpg" class="card-img-top" alt="...">
-      </div>
-      <?php
-    }
      ?>
-     <div class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <?php
-        for ($i=0; $i < 3; $i++) {
-          ?>
-          <div class="carousel-item">
-            <img src="images/crm_<?php echo rand(1,43);?>.jpg" class="d-block w-100" alt="...">
-          </div>
-          <?php
-        }
-         ?>
-      </div>
-    </div>
   </body>
   <script type="text/javascript">
   $(document).ready(function () {
@@ -226,11 +198,11 @@
     }
     var a = true;
     $('[data-toggle="offcanvas"]').click(function(){
-      $('.sidebar-nav').css({left:'0rem',transition:'1s ease-in-out'});
+      $('.sidebar-nav').css({left:'0px',transition:'1s ease-in-out'});
       a=false;
     });
     $('[data-toggle="oncanvas"]').click(function(){
-        $('.sidebar-nav').css({left:'-70rem',transition:'1s ease-in-out'});
+        $('.sidebar-nav').css({left:'-621px',transition:'1s ease-in-out'});
         a=true;
     });
   });
