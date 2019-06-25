@@ -134,6 +134,7 @@
       }
        ?>
     </div>
+    <h4 class="pl-2">SALE</h4>
     <?php
     for ($i=0; $i < 3; $i++) {
       ?>
