@@ -93,7 +93,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
       <ul class="nav sidebar-nav py-3">
           <li class="sidebar-brand">
-              <a href="#">
+              <a href="index.php">
                  <img src="images/logo-white.png" style="width:5rem;">
               </a>
               <i class="fa fa-times menu" class="hamburger is-opened" data-toggle="oncanvas"></i>
@@ -116,7 +116,9 @@
       </ul>
   </nav>
     <div class="text-center my-3">
-      <img src="images/logo.png" style="height:3rem;" alt="">
+      <a href="index.php">
+        <img src="images/logo.png" style="height:3rem;" alt="">
+      </a>
     </div>
     <h4 class="pl-2">NEW COLLECTION</h4>
     <div class="scrollmenu mt-3">

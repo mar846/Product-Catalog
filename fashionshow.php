@@ -86,6 +86,23 @@
       background-color: #222;
       box-shadow: none;
   }
+  .fa-play{
+    color: white;
+    opacity: 0.9;
+    position: absolute;
+    top: 106px;
+    left: 150px;
+  }
+  .card img{
+    opacity: 0.5;
+  }
+  .card{
+    border: none !important;
+    margin-bottom: 15px;
+  }
+  .card .image-background{
+    background: black;
+  }
     </style>
   </head>
   <body>
@@ -93,7 +110,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
       <ul class="nav sidebar-nav py-3">
           <li class="sidebar-brand">
-              <a href="#">
+              <a href="index.php">
                  <img src="images/logo-white.png" style="width:5rem;">
               </a>
               <i class="fa fa-times menu" class="hamburger is-opened" data-toggle="oncanvas"></i>
@@ -116,13 +133,27 @@
       </ul>
   </nav>
     <div class="text-center my-3">
-      <img src="images/logo.png" style="height:3rem;" alt="">
+      <a href="index.php">
+        <img src="images/logo.png" style="height:3rem;" alt="">
+      </a>
     </div>
     <div class="col-12">
-      <?php for ($i=0; $i < 4; $i++) {
+      <?php
+      $a=2016;
+      for ($i=1; $i < 5; $i++) {
         ?>
-          <img src="images/fashionshow/crm_<?php echo $i;?>">
+        <div class="card" class="mb-3" style="width:20rem;">
+          <div class="image-background">
+            <img src="images/fashionshow/crm_<?php echo $i;?>.jpeg" style="width:100%;" >
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="card-text">
+            Fashion Show <?php echo $a; ?>
+          </div>
+        </div>
+
         <?php
+        $a++;
       } ?>
     </div>
   </body>
