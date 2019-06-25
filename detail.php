@@ -6,11 +6,24 @@
   <head>
     <meta charset="utf-8">
     <title>Description</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- <script src="https://kit.fontawesome.com/841a2841ae.js"></script> -->
     <!-- <script src="fontawesome/js/fontawesome.min.js" charset="utf-8"></script> -->
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <style media="screen">
+    .scrollmenu {
+    background-color: #FFF;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    }
+    .card{
+      display: inline-block;
+    }
+    body{
+      font-size: 15px;
+    }
       .btn-lg{
         width: 4rem;
         height: 2rem;
@@ -18,7 +31,7 @@
         border:1px solid black;
         font-size: 15px;
       }
-      .scrollmenu{
+      .description{
         overflow-y: scroll;
         height: 5rem;
       }
@@ -48,43 +61,55 @@
     <div class="container">
       <H2>DENIM</h2>
       <div>
-        <strong>Description</strong>
-        <div class="scrollmenu">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <h5>Description</h5>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div>
-        <h4>SIZE</h4>
+        <h5>SIZE</h5>
         <button type="button" class="btn btn-outline-dark btn-lg" name="button">XS</button>
         <button type="button" class="btn btn-outline-dark btn-lg" name="button">S</button>
         <button type="button" class="btn btn-outline-dark btn-lg" name="button">M</button>
         <button type="button" class="btn btn-outline-dark btn-lg" name="button">L</button>
       </div>
       <div>
-        <h4>Available At</h4>
+        <h5>Available At</h5>
         <?php
           $rand = rand(0,4);
           if ($rand == 0) {
-            echo "Tunjungan Plaza";
+            echo "<h5>Tunjungan Plaza</h5>";
           }
           else if ($rand == 1) {
-            echo "Pakuwon Mall";
+            echo "<h5>Pakuwon Mall</h5>";
           }
           elseif ($rand == 2) {
-            echo "Galaxy Mall";
+            echo "<h5>Galaxy Mall</h5>";
           }
           else {
-            echo "Coming Soon";
+            echo "<h5>Coming Soon</h5>";
           }
          ?>
       </div>
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-6">
           <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-heart">&nbsp;Favorite</button>
         </div>
         <div class="col-6">
           <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-bell">&nbsp;Notify Me</button>
         </div>
+      </div>
+      <h5>Recommended</h5>
+      <div class="scrollmenu mt-3">
+        <?php
+        for ($i=1; $i < 6; $i++) {
+          ?>
+          <a href="detail.php?<?php echo $i; ?>">
+            <div class="card" style="width: 50%;">
+              <img src="images/crm_<?php echo $i;?>.jpg" class="card-img-top" style="width: 100%;">
+            </div>
+          </a>
+          <?php
+        }
+         ?>
       </div>
     </div>
   </body>
