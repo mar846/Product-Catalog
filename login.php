@@ -1,3 +1,19 @@
+<?php
+if(isset($_POST['btnSubmit'])){
+  if($_POST['user'] === 'claire'){
+    setcookie('user','claire',time()+300);
+    header('Location:index.php');
+  }
+  elseif ($_POST['user'] === 'brian' ) {
+    setcookie('user','brian',time()+300);
+    header('Location:index.php');
+  }
+  else{
+    setcookie('user',2,time()+300);
+    header('Location:index.php');
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

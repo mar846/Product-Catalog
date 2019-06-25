@@ -1,5 +1,8 @@
 <?php
   $id =  $_SERVER['QUERY_STRING'];
+  if(!isset($_COOKIE['user'])){
+    header('Location:login.php');
+  }
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -57,7 +60,24 @@
   </head>
   <body>
     <a href="index.php"><i class="fas fa-times-circle"></i></a>
-    <img src="images/crm_<?php echo $id;?>.jpg" style="width:100%;">
+    <?php
+      if (substr($id,0,1) == 'a') {
+        ?>
+          <img src="images/crm_<?php echo substr($id,1);?>.jpg" style="width:100%;">
+        <?php
+      }
+      if (substr($id,0,1) == 'b') {
+        ?>
+          <img src="images/<?php echo $_COOKIE['user']?>/sale_<?php echo substr($id,1);?>.jpg" style="width:100%;">
+        <?php
+      }
+      else{
+        ?>
+          <img src="images/<?php echo $_COOKIE['user']?>/crm_<?php echo $id;?>.jpg" style="width:100%;">
+        <?php
+      }
+     ?>
+
     <div class="container">
       <H2>Basic Knitware</h2>
       <div>
@@ -67,31 +87,43 @@
 HEIGHT OF MODEL: 177 cm. / 5′ 9″</p>
       </div>
       <div class="my-3">
-        <h5>SIZE</h5>
-        <button type="button" class="btn btn-outline-dark btn-lg" name="button">XS</button>
-        <button type="button" class="btn btn-outline-dark btn-lg" name="button">S</button>
-        <button type="button" class="btn btn-outline-dark btn-lg" name="button">M</button>
-        <button type="button" class="btn btn-outline-dark btn-lg" name="button">L</button>
+        <small><b>Colors</b></small>
+        <button type="button" class="btn btn-outline-dark col-12">Green <span class="fas fa-check-circle text-success"></span></button>
+        <button type="button" class="btn btn-outline-dark col-12">Maroon</button>
+        <button type="button" class="btn btn-outline-dark col-12">White</button>
+        <button type="button" class="btn btn-outline-dark col-12">Black</button>
+      </div>
+      <div class="my-3">
+        <small><b>SIZE</b></small>
+        <div class="">
+          <button type="button" class="btn btn-outline-dark btn-lg" name="button">XS</button>
+          <button type="button" class="btn btn-outline-dark btn-lg" name="button">S</button>
+          <button type="button" class="btn btn-outline-dark btn-lg" name="button">M</button>
+          <button type="button" class="btn btn-outline-dark btn-lg" name="button">L</button>
+        </div>
       </div>
       <div>
-        <h5>Available At</h5>
+        <small><b>Available At</b></small>
         <?php
           $rand = rand(0,4);
           if ($rand == 0) {
-            echo "<h5>Tunjungan Plaza</h5>";
+            echo "<h3>Tunjungan Plaza</h3>";
           }
           else if ($rand == 1) {
-            echo "<h5>Pakuwon Mall</h5>";
+            echo "<h3>Pakuwon Mall</h3>";
           }
           elseif ($rand == 2) {
-            echo "<h5>Galaxy Mall</h5>";
+            echo "<h3>Galaxy Mall</h3>";
+          }
+          elseif ($rand == 3) {
+            echo "<h3>July 2019</h3>";
           }
           else {
-            echo "<h5>Coming Soon</h5>";
+            echo "<h3>Coming Soon</h3>";
           }
          ?>
       </div>
-      <div class="row mb-5">
+      <div class="row mb-5 mt-3">
         <div class="col-6">
           <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-heart">&nbsp;Favorite</button>
         </div>
@@ -99,7 +131,7 @@ HEIGHT OF MODEL: 177 cm. / 5′ 9″</p>
           <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-bell">&nbsp;Notify Me</button>
         </div>
       </div>
-      <h5>Recommended</h5>
+      <small><b>Recommended</b></small>
       <div class="scrollmenu mt-3">
         <?php
         for ($i=1; $i < 6; $i++) {

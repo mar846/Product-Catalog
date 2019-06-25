@@ -1,3 +1,9 @@
+<?php
+  if(!isset($_COOKIE['user'])){
+      header('Location:login.php');
+  }
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -120,17 +126,35 @@
         <img src="images/logo.png" style="height:3rem;" alt="">
       </a>
     </div>
+    <h4 class="pl-2">FOR YOU</h4>
+    <div class="scrollmenu mt-3">
+      <?php
+      for ($i=1; $i < 10; $i++) {
+        if(file_exists('images/'.$_COOKIE['user'].'/crm_'.$i.'.jpg')){
+        ?>
+        <a href="detail.php?<?php echo $i; ?>">
+          <div class="card" style="width: 50%;">
+            <img src="images/<?php echo $_COOKIE['user']?>/crm_<?php echo $i;?>.jpg" class="card-img-top" style="width: 100%;">
+          </div>
+        </a>
+        <?php
+        }
+      }
+       ?>
+    </div>
     <h4 class="pl-2">NEW COLLECTION</h4>
     <div class="scrollmenu mt-3">
       <?php
       for ($i=1; $i < 10; $i++) {
+        if(file_exists('images/crm_'.$i.'.jpg')){
         ?>
-        <a href="detail.php?<?php echo $i; ?>">
+        <a href="detail.php?a<?php echo $i; ?>">
           <div class="card" style="width: 50%;">
             <img src="images/crm_<?php echo $i;?>.jpg" class="card-img-top" style="width: 100%;">
           </div>
         </a>
         <?php
+        }
       }
        ?>
     </div>
@@ -139,12 +163,14 @@
     for ($i=0; $i < 3; $i++) {
       ?>
       <div class="card my-2">
-        <?php $img = rand(1,43); ?>
-        <a href="detail.php?<?php echo $img;?>">
-          <img src="images/crm_<?php echo $img;?>.jpg" class="card-img-top" alt="...">
+        <?php $img = rand(1,7);
+        if(file_exists('images/'.$_COOKIE['user'].'/sale_'.$img.'.jpg')){ ?>
+        <a href="detail.php?b<?php echo $img;?>">
+          <img src="images/<?php echo $_COOKIE['user']; ?>/sale_<?php echo $img;?>.jpg" class="card-img-top" alt="...">
         </a>
       </div>
       <?php
+      }
     }
      ?>
   </body>
