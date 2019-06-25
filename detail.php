@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <title>Description</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/841a2841ae.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/841a2841ae.js"></script> -->
+    <!-- <script src="fontawesome/js/fontawesome.min.js" charset="utf-8"></script> -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
     <style media="screen">
       .btn-lg{
         width: 4rem;
@@ -78,10 +80,10 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-heart">Favorite</button>
+          <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-heart">&nbsp;Favorite</button>
         </div>
         <div class="col-6">
-          <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-bell">Notify Me</button>
+          <button type="button" name="button" class="btn btn-outline-dark btn-favorite fas fa-bell">&nbsp;Notify Me</button>
         </div>
       </div>
     </div>
