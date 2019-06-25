@@ -123,6 +123,9 @@
               <i class="fa fa-times menu" class="hamburger is-opened" data-toggle="oncanvas"></i>
           </li>
           <li>
+              <a href="#">FASHION SHOW</a>
+          </li>
+          <li>
               <a href="#">NEW COLLECTION</a>
           </li>
           <li>
@@ -134,7 +137,7 @@
           <li>
               <a href="#">KID</a>
           </li>
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-header">Dropdown heading</li>
@@ -153,7 +156,7 @@
           </li>
           <li>
               <a href="https://twitter.com/maridlcrmn">Follow me</a>
-          </li>
+          </li> -->
       </ul>
   </nav>
     <div class="text-center my-3">
