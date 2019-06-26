@@ -66,7 +66,7 @@
           <img src="images/crm_<?php echo substr($id,1);?>.jpg" style="width:100%;">
         <?php
       }
-      if (substr($id,0,1) == 'b') {
+      elseif (substr($id,0,1) == 'b') {
         ?>
           <img src="images/<?php echo $_COOKIE['user']?>/sale_<?php echo substr($id,1);?>.jpg" style="width:100%;">
         <?php
@@ -105,21 +105,18 @@ HEIGHT OF MODEL: 177 cm. / 5′ 9″</p>
       <div>
         <small><b>Available At</b></small>
         <?php
-          $rand = rand(0,4);
+          $rand = rand(0,3);
           if ($rand == 0) {
-            echo "<h3>Tunjungan Plaza</h3>";
+            echo "<h3>Coming Soon</h3>";
           }
           else if ($rand == 1) {
-            echo "<h3>Pakuwon Mall</h3>";
+            echo "<h3>".rand(1,31)." July 2019</h3>";
           }
           elseif ($rand == 2) {
-            echo "<h3>Galaxy Mall</h3>";
+            echo "<h3>This Fall</h3>";
           }
           elseif ($rand == 3) {
             echo "<h3>July 2019</h3>";
-          }
-          else {
-            echo "<h3>Coming Soon</h3>";
           }
          ?>
       </div>
@@ -134,14 +131,16 @@ HEIGHT OF MODEL: 177 cm. / 5′ 9″</p>
       <small><b>Recommended</b></small>
       <div class="scrollmenu mt-3">
         <?php
-        for ($i=1; $i < 6; $i++) {
+        for ($i=1; $i < 10; $i++) {
+          if(file_exists('images/crm_'.$i.'.jpg')){
           ?>
-          <a href="detail.php?<?php echo $i; ?>">
+          <a href="detail.php?a<?php echo $i; ?>">
             <div class="card" style="width: 50%;">
               <img src="images/crm_<?php echo $i;?>.jpg" class="card-img-top" style="width: 100%;">
             </div>
           </a>
           <?php
+          }
         }
          ?>
       </div>
