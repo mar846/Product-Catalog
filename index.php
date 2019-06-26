@@ -12,7 +12,8 @@
     <title></title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <style media="screen">
     .scrollmenu {
     background-color: #FFF;
@@ -160,16 +161,21 @@
     </div>
     <h4 class="pl-2">SALE</h4>
     <?php
+    $array = array();
     for ($i=0; $i < 3; $i++) {
       ?>
       <div class="card my-2">
-        <?php $img = rand(1,7);
+        <?php
+        $img = rand(1,7);
+        if(!in_array($img,$array)){
         if(file_exists('images/'.$_COOKIE['user'].'/sale_'.$img.'.jpg')){ ?>
         <a href="detail.php?b<?php echo $img;?>">
           <img src="images/<?php echo $_COOKIE['user']; ?>/sale_<?php echo $img;?>.jpg" class="card-img-top" alt="...">
         </a>
       </div>
       <?php
+          $array[]=$img;
+        }
       }
     }
      ?>

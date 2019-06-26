@@ -11,7 +11,8 @@
     <title></title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <style media="screen">
     .scrollmenu {
     background-color: #FFF;
